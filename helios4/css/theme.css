@@ -633,7 +633,7 @@ img {
   background: #fff;
 }
 [data-overlay].bg--primary:before {
-  background: #425cbb;
+  background: #1574F3;
 }
 [data-overlay="1"]:before {
   opacity: 0.1;
@@ -873,10 +873,10 @@ body {
   background: #f8f8f8;
 }
 .color--primary {
-  color: #425cbb !important;
+  color: #1574F3 !important;
 }
 a {
-  color: #425cbb;
+  color: #1574F3;
 }
 .color--primary-1 {
   color: #7cc36a !important;
@@ -917,7 +917,7 @@ a {
   background: #f4f4f4;
 }
 .bg--primary {
-  background: #425cbb;
+  background: #1574F3;
 }
 .bg--primary p,
 .bg--primary span,
@@ -1161,8 +1161,8 @@ a {
 }
 .btn--primary,
 .btn--primary:visited {
-  background: #425cbb;
-  border-color: #425cbb;
+  background: #1574F3;
+  border-color: #1574F3;
 }
 .btn--primary .btn__text,
 .btn--primary:visited .btn__text {
@@ -1682,7 +1682,7 @@ input[type="submit"] {
   background: none;
   outline: none;
   border: none;
-  background: #425cbb;
+  background: #1574F3;
   padding: 0.8125em 3.25em 0.8125em 3.25em;
   color: #fff;
 }
@@ -1752,7 +1752,7 @@ button:focus {
 .input-checkbox.checked .inner,
 .input-radio.checked .inner,
 .input-select.checked .inner {
-  background: #425cbb;
+  background: #1574F3;
 }
 .input-checkbox label,
 .input-radio label,
@@ -1865,7 +1865,7 @@ button:focus {
   padding-bottom: 1.625em;
 }
 .accordion li.active .accordion__title {
-  background: #425cbb;
+  background: #1574F3;
   border-bottom: 1px solid #dfdfdf;
 }
 .accordion li.active .accordion__content {
@@ -3209,7 +3209,7 @@ body.theme--boxed section.section--overlap + section:not(.bg--white):not(.bg--da
   left: -25%;
   width: 25%;
   height: 3px;
-  background-color: #425cbb;
+  background-color: #1574F3;
   animation: loading 5s linear infinite;
 }
 @keyframes loading {
@@ -3443,7 +3443,7 @@ span.label {
 }
 /*! -- Pillar Buttons -- */
 .btn.btn--primary {
-  border-color: #425cbb;
+  border-color: #1574F3;
 }
 .btn.btn--primary:hover {
   border-color: #546cc3;
@@ -4224,8 +4224,8 @@ button {
   font-size: 0.625em !important;
   letter-spacing: 1px;
   color: #fff;
-  background: #425cbb;
-  border-color: #425cbb;
+  background: #1574F3;
+  border-color: #1574F3;
 }
 button:hover,
 button:focus,
@@ -4235,7 +4235,7 @@ button:active {
 button:active,
 button:hover,
 button:focus {
-  border-color: #425cbb !important;
+  border-color: #1574F3 !important;
 }
 button.btn--loading:after {
   background: #8c9cd7;
@@ -5202,7 +5202,7 @@ i + .twitter-feed {
   margin-bottom: 0;
 }
 .twitter-feed-1 p a {
-  color: #425cbb;
+  color: #1574F3;
 }
 .twitter-feed-2 li .tweet {
   margin-bottom: 0.8125em;
@@ -5628,7 +5628,7 @@ section.features .feature-2 {
 }
 .piechart-3 i {
   font-size: 2.8125em;
-  color: #425cbb;
+  color: #1574F3;
 }
 .piechart-3 + h5 {
   margin-top: 1.625em;
@@ -5645,7 +5645,7 @@ section.features .feature-2 {
   border-radius: 50px;
 }
 .barchart .barchart__progress {
-  background: #425cbb;
+  background: #1574F3;
   border-radius: 50px;
 }
 .barchart .barchart__description {
@@ -6796,7 +6796,7 @@ section:first-of-type.imagebg + .masonry-contained {
   -moz-transition: 0.3s ease-in;
 }
 .hover-element.bg--primary [data-overlay]:before {
-  background: #425cbb;
+  background: #1574F3;
 }
 .hover-element .modal-instance {
   position: relative;
@@ -7976,7 +7976,7 @@ section + img {
   height: 40000px;
   position: absolute;
   top: -200px;
-  border-right: 1px dashed #425cbb;
+  border-right: 1px dashed #1574F3;
   opacity: .3;
   left: 50%;
   margin-left: -1px;
