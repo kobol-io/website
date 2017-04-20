@@ -1173,7 +1173,7 @@ a {
   color: #fff;
 }
 .btn--primary:hover {
-  background: #546cc3;
+  background: #41CF75;
 }
 .btn--primary:active {
   background: #3b53a8;
@@ -3446,7 +3446,7 @@ span.label {
   border-color: #1574F3;
 }
 .btn.btn--primary:hover {
-  border-color: #546cc3;
+  border-color: #41CF75;
 }
 .btn.btn--success {
   background: #64b671;
