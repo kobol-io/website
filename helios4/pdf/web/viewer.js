@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 'use strict';
-var DEFAULT_URL = 'Helios4_Specifications.pdf';
+var DEFAULT_URL = '../../doc/Helios4_Specifications.pdf';
 ;
 var pdfjsWebLibs;
 {
