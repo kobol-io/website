@@ -52,11 +52,13 @@
             }
 
             var full_kit_usd = fx.convert(full_kit_sgd, {to: "USD"});
-            full_kit_usd = accounting.formatMoney(full_kit_usd, "", 0, ",", ".");
+            full_kit_usd = accounting.toFixed(full_kit_usd, 1);
+            full_kit_usd = accounting.formatMoney(full_kit_usd, "", 2);
             document.getElementById("full_kit_usd").innerHTML = full_kit_usd;
 
             var basic_kit_usd = fx.convert(basic_kit_sgd, {to: "USD"});
-            basic_kit_usd = accounting.formatMoney(basic_kit_usd, "", 0, ",", ".");
+            basic_kit_usd = accounting.toFixed(basic_kit_usd, 1);
+            basic_kit_usd = accounting.formatMoney(basic_kit_usd, "", 2);
             document.getElementById("basic_kit_usd").innerHTML = basic_kit_usd;
        }
     )
@@ -363,6 +365,18 @@
             </div>
           </div>
         </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="pricing pricing-3 text-center">
+            <img alt="Pricing" src="img/helios4_bulk.png">
+            <div class="pricing__body">
+              <a class="btn btn--primary" href="https://shop.kobol.io/pages/contact-us">
+                <span class="btn__text">CONTACT US</span>
+              </a>
+              <h5>Bulk Order</h5>
+              <p>We offer board only bulk order. Minimum order quantity:<br> 10 boards.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section><a id="partners" class="in-page-link"></a>
@@ -515,7 +529,7 @@
         </div>
       </div>
     </div>
-  </section><a id="footer" class="in-page-link"></a>
+  </section><a id="newsletter" class="in-page-link"></a>
   <section class="bg--primary space--sm cta cta-5">
     <div class="container">
       <div class="row">
@@ -530,7 +544,59 @@
         </div>
       </div>
     </div>
-  </section></div>
+  </section><a id="footer" class="in-page-link"></a>
+  <section class="footer-3 space--xs text-center-xs">
+      <div class="col-sm-3">
+          <img alt="logo" class="logo" src="img/helios4_logo.png" />
+          <span>by Kobol Innovations Pte. Ltd.</span><br>
+          <span class="type--fine-print">UEN 201821321E</span>
+      </div>
+      <div class="col-sm-6 text-center">
+        <ul class="footer__navigation">
+          <li>
+            <div class="modal-instance">
+              <a href="#" class="modal-trigger">Privacy Policy</a>
+                <div class="modal-container" data-modal-id="Privacy">
+                  <div class="modal-content" data-width="70%" data-height="85%">
+                     <iframe src="terms/privacy.html"></iframe>
+                  </div>
+                </div>
+            </div>
+          </li>
+          <li>
+            <div class="modal-instance">
+              <a href="#" class="modal-trigger">Terms of Service</a>
+                <div class="modal-container" data-modal-id="Terms">
+                  <div class="modal-content" data-width="70%" data-height="85%">
+                    <iframe src="terms/tos.html"></iframe>
+                  </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-3 text-right text-center-xs">
+        <ul class="social-list">
+          <li>
+            <a href="http://www.facebook.com/kobol.io/" target="_blank">
+              <i class="socicon-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/helios-4/" target="_blank">
+              <i class="socicon-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@kobol.io">
+              <i class="icon icon-Email icon--xs"></i>
+            </a>
+          </li>
+        </ul>
+        <span class="type--fine-print">&copy; 2018 Kobol Innovations Pte. Ltd. - All Rights Reserved</span>
+    </div>
+  </section>
+</div>
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/scrollreveal.min.js"></script>
   <script src="js/parallax.js"></script>
