@@ -3226,12 +3226,7 @@ body.theme--boxed section.section--overlap + section:not(.bg--white):not(.bg--da
     font-size: 87.5%;
   }
 }
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-SemiBold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-}
+
 h1,
 h2,
 h3,
