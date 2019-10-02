@@ -79,7 +79,8 @@
         'right': '0',
         'top': '0',
         'z-index': '9000',
-        'background': 'url(' + base.settings.bckImage + ') no-repeat right top'
+        'background': 'url(' + base.settings.bckImage + ') no-repeat right top',
+        'background-size': '250px'
       });
 
       //Insert
