@@ -910,6 +910,9 @@ a {
 .bg--dark:not(.nav-bar) a:not(.btn) {
   color: #fff;
 }
+.bg--black {
+  background: #000000;
+}
 .bg--site {
   background: #f8f8f8;
 }
