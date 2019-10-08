@@ -1571,7 +1571,7 @@ nav {
     display: block;
   }
   #peelback {
-    visibility: hidden;
+    display: none;
   }
 }
 .nav-open .nav-bar {
