@@ -1570,6 +1570,9 @@ nav {
   .module-applet.active .module-applet__body {
     display: block;
   }
+  #peelback {
+    visibility: hidden;
+  }
 }
 .nav-open .nav-bar {
   max-height: 100000px !important;
