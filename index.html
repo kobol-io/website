@@ -24,20 +24,6 @@
   </script>
 </head>
 <body data-reveal-selectors="section:not(.masonry):not(:first-of-type):not(.parallax)">
-  <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="js/jquery.peelback.js"></script>
-  <script>
-  (function() {
-    $('body').peelback({
-      bckImage  : 'img/helios4_link.png',
-      peelImage  : 'img/peel-image.png',
-      clickURL : 'http://kobol.io/helios4',
-      smallSize: 135,
-      bigSize: 180,
-      gaTrack  : false,
-    });
-  })();
-  </script>
   <div class="nav-container">
     <nav>
       <div class="nav-bar bg--white" data-fixed-at="700">
@@ -51,6 +37,9 @@
             </li>
             <li>
               <a href="helios4">HELIOS<b style="color: black;">4</b></a>
+            </li>
+            <li>
+              <a href="https://shop.kobol.io">SHOP</a>
             </li>
             <li>
               <a href="https://blog.kobol.io">BLOG</a>
@@ -70,95 +59,473 @@
     </nav>
   </div>
   <div class="main-container">
-    <section class="bg--dark">
-      <div class="container">
-        <div class="row">
-          <div class="text-center">
-            <img alt="Helios64" src="img/landing.png">
-          </div>
+    <section class="height-100 cover cover-2">
+      <div class="col-sm-5 col-md-9">
+        <div class="background-image">
+          <img alt="Helios64 Bundle" src="img/helios64-bundle.png">
+        </div>
+      </div>
+      <div class="col-sm-7 bg--white text-center col-md-4">
+        <div class="pos-vertical-center">
+          <img class="logo" alt="Helios64 Logo" src="img/helios64-logo.png">
+          <p class="lead">The Ultimate ARM Powered NAS.<br></p>
+          <a class="btn btn--primary btn--lg" href="https://shop.kobol.io">
+            <span class="btn__text">PRE-ORDER NOW </span>
+          </a>
+        </div>
+        <div class="col-sm-12 text-center pos-absolute pos-bottom">
+          <ul class="social-list">
+            <li>
+              <a href="https://www.facebook.com/kobol.io/" target="_blank">
+                <i class="socicon-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/kobol_io" target="_blank">
+                <i class="socicon-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://blog.kobol.io" target="_blank">
+                <i class="socicon-rss"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
-    <section class="bg--secondary">
+    <div class="separator"><img alt="image" src="img/pink-line.png"></div>
+    <section class="bg--dark section--even">
       <div class="container">
-        <div class="row">
-          <div class="text-center">
-            <img alt="Helios64 Specs" src="img/helios64_specs_teaser.png">
+        <div class="row lead">
+          <p>The Kobol Team heard you and we are back with our next take on the best ARM based computer for a NAS solution. Introducing the better, faster and sleeker <b>Helios64</b> :
+            <ul class="bullets">
+              <li>
+                More storage capacity
+              </li>
+              <li>
+                Greater network throughput
+              </li>
+              <li>
+                Improved computing power and memory
+              </li>
+              <li>
+                Wider usage functions
+              </li>
+              <li>
+                Reinforced reliability
+              </li>
+            </ul>
+            <b>Helios64</b> is definitely a full-fledged solution which offers built-in features you won’t find in any other product.</p>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="bg--dark space--sm cta cta-5">
-      <div class="container">
-        <div class="row">
+      </section>
+      <section class="imageblock">
+        <div class="imageblock__content col-sm-4 pos-left col-md-8">
+          <div class="background-image-holder">
+            <img alt="Helios64 Case 5-bay" src="img/helios64-case-5-bay.png">
+          </div>
+        </div>
+        <div class="col-md-push-6 col-sm-8 col-sm-push-4 col-md-8">
+          <div class="col-md-3 col-md-offset-4 col-sm-8 col-sm-offset-2">
+            <div class="feature feature-1 service-1 text-center">
+              <i class="icon icon-Data-Copy icon--lg"></i>
+              <h4>5-Bay Storage<br></h4>
+              <p>Scalable and extensive storage capability. Enjoy up to 80TB of data storage. <br></p>
+              <hr>
+              <ul class="bullets">
+                <li>
+                  <em>5x SATA 3.0 Ports </em>
+                </li>
+                <li>
+                  <em>1x M.2 SATA 3.0 Slot </em>
+                </li>
+                <li>
+                  <em>HDD Hot-plug Support</em>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="imageblock">
+        <div class="imageblock__content col-sm-4 pos-right col-md-8">
+          <div class="background-image-holder">
+            <img alt="Helios64 LAN port" src="img/helios64-case-back-panel.png">
+          </div>
+        </div>
+        <div class="col-sm-8 col-md-4">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="feature feature-1 service-1 text-center">
+              <i class="icon icon-Arrow-Inside icon--lg"></i>
+              <h4>Multi-Gigabit Ethernet<br></h4>
+              <p>No more network bottleneck when accessing your data. Take advantage of the new Multi-Gigabit speed standard. &nbsp; <br></p>
+              <hr>
+              <ul class="bullets">
+                <li>
+                  <em>Up to 2.5Gb Ethernet </em>
+                </li>
+                <li>
+                  <em>Dual LAN Port <br></em>
+                </li>
+                <li>
+                  <em>Wake-on-LAN Support <br></em>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="imageblock">
+        <div class="imageblock__content col-sm-4 pos-left col-md-8">
+          <div class="background-image-holder">
+            <img alt="Helios64 Board CPU Memory" src="img/helios64-board-view1.png">
+          </div>
+        </div>
+        <div class="col-md-push-6 col-sm-8 col-sm-push-4 col-md-8">
+          <div class="col-md-3 col-md-offset-4 col-sm-8 col-sm-offset-2">
+            <div class="feature feature-1 service-1 text-center">
+              <i class="icon icon-CPU icon--lg"></i>
+              <h4>Powerful Configuration<br></h4>
+              <p>Leverage on a Processor and Memory combo that will make your NAS server performs any task.<br></p>
+              <hr>
+              <ul class="bullets">
+                <li>
+                  <em>ARM 64-bit Hexacore SoC<br></em>
+                </li>
+                <li>
+                  <em>LPDDR4 4GB </em>
+                </li>
+                <li>
+                  <em>eMMC 5.1 16GB </em>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="imageblock">
+        <div class="imageblock__content col-sm-4 pos-right col-md-8">
+          <div class="background-image-holder">
+            <img alt="Helios64 UPS Battery" src="img/helios64-ups-battery.png">
+          </div>
+        </div>
+        <div class="col-sm-8 col-md-4">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="feature feature-1 service-1 text-center">
+              <i class="icon icon-Battery-100 icon--lg"></i>
+              <h4>Built-In UPS<br></h4>
+              <p>Don't fear data loss from power interruption thanks to a built-in battery power system.<br></p>
+              <hr>
+              <ul class="bullets">
+                <li>
+                  <em>Smart Power Sensor </em>
+                </li>
+                <li>
+                  <em>Auto System Recover </em>
+                </li>
+                <li>
+                  <em>User Configurable </em>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="height-100 slider slider--animate cover cover-3" data-paging="true" data-timing="9000">
+        <ul class="slides">
+          <li class="imagebg" data-overlay="4">
+            <div class="background-image-holder">
+              <img alt="Helios64 Display Mode" src="img/helios64-DP-mode.jpg">
+            </div>
+            <div class="container pos-absolute pos-bottom text-center-xs">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h3>USB Type-C : Display Mode<br></h3>
+                  <p class="lead">Connect Helios64 to your TV and use it as your Media Center to play your content library.<br></p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="imagebg" data-overlay="4">
+            <div class="background-image-holder">
+              <img alt="Helios64 DAS Mode" src="img/helios64-DAS-mode.jpg">
+            </div>
+            <div class="container pos-absolute pos-bottom text-center-xs">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h3>USB Type-C : DAS Mode<br></h3>
+                  <p class="lead">Connect directly Helios64 via USB 3.0 to your work station in order to access your data even faster.<br></p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="height-70 imageblock">
+        <div class="imageblock__content col-sm-4 pos-left col-md-8">
+          <div class="background-image-holder">
+            <img alt="Helios64 Case" src="img/helios64-case.png">
+          </div>
+        </div>
+        <div class="col-md-push-6 col-sm-8 col-sm-push-4 col-md-8">
+          <div class="col-md-5 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="feature feature-1 service-1 text-center">
+              <h4>Premium Aluminum Case<br></h4>
+              <p>Helios64 5-Bay aluminum case boasts a combination of fluid lines and vibrant colors. The case offers a hot-plug tray system to easily install &amp; replace 3.5" drives on the fly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="features features-5 bg--secondary">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <h3>Many more features...<br></h3>
+            </div>
+            <div class="col-md-offset-1 col-sm-6 col-md-4">
+              <div class="feature feature-2">
+                <div class="feature__title">
+                  <i class="icon icon-Chip"></i>
+                  <h6>M.2 SATA COnnECTOR<br></h6>
+                </div>
+                <p>Use fast M.2 SDD storage to run low latency applications (*shared with SATA port 1).</p>
+              </div>
+            </div>
+            <div class="col-md-offset-2 col-sm-6 col-md-4">
+              <div class="feature feature-2">
+                <div class="feature__title">
+                  <i class="icon icon-Usb"></i>
+                  <h6>USB 3.0<br></h6>
+                </div>
+                <p>3x ports to connect external storages and 3rd party accessories (e.g Wifi dongle).</p>
+              </div>
+            </div>
+            <div class="col-md-offset-1 col-sm-6 col-md-4">
+              <div class="feature feature-2">
+                <div class="feature__title">
+                  <i class="icon icon-Maximize"></i>
+                  <h6>NANO-ITX FORM FACTOR<br></h6>
+                </div>
+                <p>Small and flexible form factor allowing the board to be fitted in 3rd party enclosures.</p>
+              </div>
+            </div>
+            <div class="col-md-offset-2 col-sm-6 col-md-4">
+              <div class="feature feature-2">
+                <div class="feature__title">
+                  <i class="icon icon-Electricity"></i>
+                  <h6>DUAL DC-INPUT<br></h6>
+                </div>
+                <p>Power the board from External Adapter and/or ATX PSU. Supports auto source fallback.</p>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <img alt="Helios64 Interface" src="img/helios64-board-view2.png">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg--secondary">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="feature feature-1">
+                <i class="icon icon-Mixer"></i>
+                <h6>RICH IO INTERFACE<br></h6>
+                <p>Expand board functions though I2C, SPI or GPIO interfaces (e.g Control Panel, OLED Display...).</p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-1">
+                <i class="icon icon-Fan"></i>
+                <h6>PWM Fan<br></h6>
+                <p>Connect up to 2x PWM fans with automatic speed control and temperature monitoring.</p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-1">
+                <i class="icon icon-Memory-Card2"></i>
+                <h6>micro SDcard<br></h6>
+                <p>Support SDHC or SDXC cards with a bus speed of up 104 MByte/s.</p>
+              </div>
+            </div>
+          </div>
           <div class="col-sm-12 text-center">
-            <p class="lead">Want to get notified when Heliso64 is available ?</p>
-            <a class="btn btn--primary btn--lg" href="subscribe.html" target="_blank">
-              <span class="btn__text">SUBSCRIBE TO NEWSLETTER</span>
+            <a class="btn btn--sm" href="https://wiki.kobol.io" target="_blank">
+              <span class="btn__text">CHECK OUR WIKI FOR MORE DETAILS</span>
             </a>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="footer-3 space--xs text-center-xs">
-      <div class="col-sm-3">
-        <img alt="logo" class="logo" src="img/kobol_logo.png" />
-        <span>Kobol Innovations Pte. Ltd.</span><br>
-        <span class="type--fine-print">UEN 201821321E</span>
-      </div>
-      <div class="col-sm-6 text-center">
-        <ul class="footer__navigation">
-          <li>
-            <div class="modal-instance">
-              <a href="#" class="modal-trigger">Privacy Policy</a>
-              <div class="modal-container" data-modal-id="Privacy">
-                <div class="modal-content" data-width="70%" data-height="85%">
-                  <iframe src="terms/privacy.html"></iframe>
+      </section>
+      <div class="separator"><img alt="image" src="img/pink-line.png"></div>
+      <section class="features features-6">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-7">
+              <img alt="pic" src="img/open_logos.png">
+            </div>
+            <div class="col-sm-5">
+              <h3>We Believe in Open Source</h3>
+              <p class="lead">Because projects like Helios64 wouldn't exist without all the amazing community driven projects out there, our work will be published on Github and Wiki as Open Source material.</p>
+            </div>
+          </div>
+        </section>
+        <section class="bg--secondary">
+          <div class="container" >
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="elements--title">
+                  <h4>Our Partners</h4>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-1">
+                  <div class="card__image">
+                    <a href="http://www.armbian.com/" target="_blank">
+                      <img alt="Armbian" src="img/armbian.png">
+                    </a>
+                  </div>
+                  <div class="card__body boxed bg--white">
+                    <div class="card__title">
+                      <h5><a href="http://www.armbian.com/" target="_blank">Armbian<br>(Operating System)</a></h5>
+                    </div>
+                    <span>
+                      <em>Linux for ARM Boards.</em>
+                    </span>
+                    <p>Lightweight Debian and Ubuntu based distribution specialized for ARM powered boards. Armbian provides a powerful build and software development tools which is supported by a vibrant community.<br><br></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-1">
+                  <div class="card__image">
+                    <a href="http://syncloud.org/" target="_blank">
+                      <img alt="Syncloud" src="img/syncloud.png">
+                    </a>
+                  </div>
+                  <div class="card__body boxed bg--white">
+                    <div class="card__title">
+                      <h5><a href="http://syncloud.org/" target="_blank">Syncloud<br>(Operating System)</a></h5>
+                    </div>
+                    <span>
+                      <em>Your Personal App Server. </em>
+                    </span>
+                    <p>Have your own online File storage, Social network or Email server. Great Apps like ownCloud &amp; Diaspora are available on Syncloud which adapts all these applications for the best user experience on ARM platform.<br><br></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-1">
+                  <div class="card__image">
+                    <a href="http://www.openmediavault.org/" target="_blank">
+                      <img alt="OMV" src="img/omv.png">
+                    </a>
+                  </div>
+                  <div class="card__body boxed bg--white">
+                    <div class="card__title">
+                      <h5><a href="http://www.openmediavault.org/" target="_blank">OpenMediaVault (Application)</a></h5>
+                    </div>
+                    <span>
+                      <em>The Open NAS Solution. </em>
+                    </span>
+                    <p>The next generation of NAS turn key solution based on Debian Linux, OMV is a simple and easy out-of-the-box solution that will allow everyone to install and administrate a NAS without extensive knowledge.<br><br></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-1">
+                  <div class="card__image">
+                    <a href="http://nextcloud.com/" target="_blank">
+                      <img alt="NextCloud" src="img/nextcloud.png">
+                    </a>
+                  </div>
+                  <div class="card__body boxed bg--white">
+                    <div class="card__title">
+                      <h5><a href="http://nextcloud.com/" target="_blank">NextCloud<br>(Application)</a></h5>
+                    </div>
+                    <span>
+                      <em>The File Hosting Solutions.</em>
+                    </span>
+                    <p>Nextcloud is a suite of client-server software for creating and using file hosting services. Nextcloud application functionally is similar to Dropbox. Unlike Dropbox, it is self-hosted so you stay in control of your data.</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </li>
-          <li>
-            <div class="modal-instance">
-              <a href="#" class="modal-trigger">Terms of Service</a>
-              <div class="modal-container" data-modal-id="Terms">
-                <div class="modal-content" data-width="70%" data-height="85%">
-                  <iframe src="terms/tos.html"></iframe>
-                </div>
+          </div>
+        </section>
+        <section class="bg--dark space--sm cta cta-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 text-center">
+                <p class="lead">Want to receive update about Helios64 ?</p>
+                <a class="btn btn--primary btn--lg" href="subscribe.html" target="_blank">
+                  <span class="btn__text">SUBSCRIBE TO NEWSLETTER</span>
+                </a>
               </div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </section>
+        <section class="footer-3 space--xs text-center-xs">
+          <div class="col-sm-3">
+            <img alt="logo" class="logo" src="img/kobol_logo.png" />
+            <span>Kobol Innovations Pte. Ltd.</span><br>
+            <span class="type--fine-print">UEN 201821321E</span>
+          </div>
+          <div class="col-sm-6 text-center">
+            <ul class="footer__navigation">
+              <li>
+                <div class="modal-instance">
+                  <a href="#" class="modal-trigger">Privacy Policy</a>
+                  <div class="modal-container" data-modal-id="Privacy">
+                    <div class="modal-content" data-width="70%" data-height="85%">
+                      <iframe src="terms/privacy.html"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="modal-instance">
+                  <a href="#" class="modal-trigger">Terms of Service</a>
+                  <div class="modal-container" data-modal-id="Terms">
+                    <div class="modal-content" data-width="70%" data-height="85%">
+                      <iframe src="terms/tos.html"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-3 text-right text-center-xs">
+            <ul class="social-list">
+              <li>
+                <a href="https://www.facebook.com/kobol.io/" target="_blank">
+                  <i class="socicon-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/kobol_io" target="_blank">
+                  <i class="socicon-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://blog.kobol.io" target="_blank">
+                  <i class="socicon-rss"></i>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@kobol.io">
+                  <i class="icon icon-Email icon--xs"></i>
+                </a>
+              </li>
+            </ul>
+            <span class="type--fine-print">&copy; 2020 Kobol Innovations Pte. Ltd. - All Rights Reserved</span>
+          </div>
+        </section>
       </div>
-      <div class="col-sm-3 text-right text-center-xs">
-        <ul class="social-list">
-          <li>
-            <a href="https://www.facebook.com/kobol.io/" target="_blank">
-              <i class="socicon-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/kobol_io" target="_blank">
-              <i class="socicon-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://blog.kobol.io" target="_blank">
-              <i class="socicon-rss"></i>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:info@kobol.io">
-              <i class="icon icon-Email icon--xs"></i>
-            </a>
-          </li>
-        </ul>
-        <span class="type--fine-print">&copy; 2020 Kobol Innovations Pte. Ltd. - All Rights Reserved</span>
-      </div>
-    </section>
-  </div>
-  <script src="js/scrollreveal.min.js"></script>
-  <script src="js/parallax.js"></script>
-  <script src="js/scripts.js"></script>
-</body>
-</html>
+      <script src="js/jquery-2.1.4.min.js"></script>
+      <script src="js/owl.carousel.min.js"></script>
+      <script src="js/scrollreveal.min.js"></script>
+      <script src="js/parallax.js"></script>
+      <script src="js/scripts.js"></script>
+    </body>
+    </html>
