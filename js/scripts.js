@@ -1,5 +1,4 @@
-
-var mr = (function ($, window, document){
+var mr = (function ($, window, document) {
     "use strict";
 
     var mr         = {},
@@ -9,26 +8,24 @@ var mr = (function ($, window, document){
     $(document).ready(documentReady);
     $(window).load(windowLoad);
 
-    function documentReady(context){
-        
+    function documentReady(context) {
         context = typeof context == typeof undefined ? $ : context;
         components.documentReady.concat(components.documentReadyDeferred).forEach(function(component){
             component(context);
         });
     }
 
-    function windowLoad(context){
-        
+    function windowLoad(context) {
         context = typeof context == "object" ? $ : context;
         components.windowLoad.concat(components.windowLoadDeferred).forEach(function(component){
            component(context);
         });
     }
 
-    mr.setContext = function (contextSelector){
+    mr.setContext = function(contextSelector) {
         var context = $;
-        if(typeof contextSelector !== typeof undefined){
-            return function(selector){
+        if (typeof contextSelector !== typeof undefined) {
+            return function(selector) {
                 return $(contextSelector).find(selector);
             };
         }
@@ -44,7 +41,7 @@ var mr = (function ($, window, document){
 
 
 //////////////// Utility Functions
-mr = (function (mr, $, window, document){
+mr = (function (mr, $, window, document) {
     "use strict";
     mr.util = {};
 
@@ -53,7 +50,7 @@ mr = (function (mr, $, window, document){
                                        window.webkitRequestAnimationFrame ||
                                        window.msRequestAnimationFrame;
 
-    mr.util.documentReady = function($){
+    mr.util.documentReady = function ($) {
         var today = new Date();
         var year = today.getFullYear();
         $('.update-year').text(year);
@@ -68,10 +65,10 @@ mr = (function (mr, $, window, document){
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
 
-    mr.util.slugify = function(text, spacesOnly){
-        if(typeof spacesOnly !== typeof undefined){
+    mr.util.slugify = function(text, spacesOnly) {
+        if (typeof spacesOnly !== typeof undefined) {
             return text.replace(/ +/g, '');
-        }else{
+        } else {
             return text
                 .toLowerCase()
                 .replace(/[^\w ]+/g, '')
@@ -79,72 +76,72 @@ mr = (function (mr, $, window, document){
         }
     };
 
-    mr.util.sortChildrenByText = function(parentElement, reverse){
+    mr.util.sortChildrenByText = function (parentElement, reverse) {
         var $parentElement = $(parentElement);
         var items          = $parentElement.children().get();
-        var order          = -1;
-        var order2         = 1;
-        if(typeof reverse !== typeof undefined){order = 1; order2 = -1;}
+        var order          = -1,
+            order2         = 1;
+        if (typeof reverse !== typeof undefined) {
+            order = 1;
+            order2 = -1;
+        }
 
-        items.sort(function(a,b){
-          var keyA = $(a).text();
-          var keyB = $(b).text();
+        items.sort(function(a, b) {
+            var keyA = $(a).text(),
+                keyB = $(b).text();
 
-          if (keyA < keyB) return order;
-          if (keyA > keyB) return order2;
-          return 0;
+            if (keyA < keyB) return order;
+            if (keyA > keyB) return order2;
+            return 0;
         });
         
         // Append back into place
         $parentElement.empty();
-        $(items).each(function(i, itm){
-          $parentElement.append(itm);
+        $(items).each(function(i, itm) {
+            $parentElement.append(itm);
         });
     };
     
     // Set data-src attribute of element from src to be restored later
-    mr.util.idleSrc = function(context, selector){
-        
-            selector  = (typeof selector !== typeof undefined) ? selector : '';
-            var elems = context.is(selector+'[src]') ? context : context.find(selector+'[src]');
+    mr.util.idleSrc = function(context, selector) {
+        selector  = (typeof selector !== typeof undefined) ? selector : '';
+        var elems = context.is(selector+'[src]') ? context : context.find(selector+'[src]');
 
-        elems.each(function(index, elem){
+        elems.each(function(index, elem) {
             elem           = $(elem);
             var currentSrc = elem.attr('src'),
                 dataSrc    = elem.attr('data-src');
 
             // If there is no data-src, save current source to it
-            if(typeof dataSrc === typeof undefined){
+            if (typeof dataSrc === typeof undefined) {
                 elem.attr('data-src', currentSrc);
             }
 
             // Clear the src attribute
-            elem.attr('src', '');    
-            
+            elem.attr('src', '');
         });
     };
 
     // Set src attribute of element from its data-src where it was temporarily stored earlier
-    mr.util.activateIdleSrc = function(context, selector){
-        
+    mr.util.activateIdleSrc = function(context, selector) {
         selector     = (typeof selector !== typeof undefined) ? selector : '';
         var elems    = context.is(selector+'[src]') ? context : context.find(selector+'[src]');
 
-        elems.each(function(index, elem){
+        elems.each(function(index, elem) {
             elem = $(elem);
             var dataSrc    = elem.attr('data-src');
 
             // If there is no data-src, save current source to it
-            if(typeof dataSrc !== typeof undefined){
+            if (typeof dataSrc !== typeof undefined) {
                 elem.attr('src', dataSrc);
             }
         });
     };
 
-    mr.util.pauseVideo = function(context){
+    mr.util.pauseVideo = function(context) {
         var elems = context.is('video') ? context : context.find('video');
 
-        elems.each(function(index, video){
+        elems.each(function(index, video) {
             var playingVideo = $(video).get(0);
             playingVideo.pause();
         });
@@ -156,7 +153,7 @@ mr = (function (mr, $, window, document){
 }(mr, jQuery, window, document));
 
 //////////////// Scroll Functions
-mr = (function (mr, $, window, document){
+mr = (function (mr, $, window, document) {
     "use strict";
 
     mr.scroll           = {};
@@ -164,28 +161,27 @@ mr = (function (mr, $, window, document){
     mr.scroll.y         = 0;
     mr.scroll.x         = 0;
 
-     var documentReady = function($){
-        
+    var documentReady = function($) {
         // Check if scroll-assist is on
-        if($('body').hasClass('scroll-assist')){
+        if ($('body').hasClass('scroll-assist')) {
             mr.scroll.assisted = true;
         }
 
         //////////////// Capture Scroll Event and fire scroll function
         
         addEventListener('scroll', function(evt) {        
-                //if(!mr.scroll.assisted){
-                    window.mr.scroll.y = window.pageYOffset;
-                //}
-                window.mr.scroll.update(evt);
+            //if (!mr.scroll.assisted) {
+                window.mr.scroll.y = window.pageYOffset;
+            //}
+            window.mr.scroll.update(evt);
         }, false);
         
     };
 
-    mr.scroll.update = function(event){
+    mr.scroll.update = function(event) {
         // Loop through all mr scroll listeners
         for (var i = 0, l = mr.scroll.listeners.length; i < l; i++) {
-           mr.scroll.listeners[i](event);
+            mr.scroll.listeners[i](event);
         }
     };
 
@@ -199,27 +195,27 @@ mr = (function (mr, $, window, document){
 
 
 //////////////// Accordions
-mr = (function (mr, $, window, document){
+mr = (function (mr, $, window, document) {
     "use strict";
-    
-    var documentReady = function($){
-        $('.accordion__title').on('click', function(){
+
+    var documentReady = function($) {
+        $('.accordion__title').on('click', function() {
             var accordion = $(this).closest('.accordion');
             var li = $(this).closest('li');
-            if(li.hasClass('active')){
+            if (li.hasClass('active')) {
                 li.removeClass('active');      
-            }else{
-                if(accordion.hasClass('accordion--oneopen')){
+            } else {
+                if (accordion.hasClass('accordion--oneopen')) {
                     var wasActive = accordion.find('li.active');
                     wasActive.removeClass('active');
                     li.addClass('active');
-                }else{
+                } else {
                     li.addClass('active');
                 }
             }
         });
 
-        $('.accordion').each(function(){
+        $('.accordion').each(function() {
             var accordion = $(this);
             var minHeight = accordion.outerHeight(true);
             accordion.css('min-height',minHeight);
@@ -237,11 +233,10 @@ mr = (function (mr, $, window, document){
 
 
 //////////////// Backgrounds
-mr = (function (mr, $, window, document){
+mr = (function (mr, $, window, document) {
     "use strict";
-    
-    var documentReady = function($){
-        
+
+    var documentReady = function($) {
         //////////////// Append .background-image-holder <img>'s as CSS backgrounds
 
 	    $('.background-image-holder').each(function() {
@@ -260,11 +255,10 @@ mr = (function (mr, $, window, document){
 }(mr, jQuery, window, document));
 
 //////////////// Cookies
-mr = (function (mr, $, window, document){
+mr = (function (mr, $, window, document) {
     "use strict";
-    
-    mr.cookies = {
 
+    mr.cookies = {
         getItem: function (sKey) {
             if (!sKey) { return null; }
             return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
@@ -309,19 +303,19 @@ mr = (function (mr, $, window, document){
 }(mr, jQuery, window, document));
 
 //////////////// Forms
-mr = (function (mr, $, window, document){
+mr = (function (mr, $, window, document) {
     "use strict";
-    
+
     mr.forms = {};
 
-    var documentReady = function($){
-        
+    var documentReady = function($) {
+
         //////////////// Checkbox Inputs
 
         $('.input-checkbox').on('click', function() {
             var checkbox = $(this);
             checkbox.toggleClass('checked');
-            
+
             var input = checkbox.find('input');
             if (input.prop('checked') === false) {
                 input.prop('checked', true);
@@ -342,25 +336,27 @@ mr = (function (mr, $, window, document){
 
         //////////////// File Uploads
 
-        $('.input-file .btn').on('click',function(){
+        $('.input-file .btn').on('click',function() {
             $(this).siblings('input').trigger('click');
             return false;
         });
         
         //////////////// Handle Form Submit
 
-        $('form.form-email, form[action*="list-manage.com"], form[action*="createsend.com"]').attr('novalidate', true).unbind('submit').on('submit', mr.forms.submit);
+        $('form.form-email, form[action*="list-manage.com"], form[action*="createsend.com"]')
+            .attr('novalidate', true)
+            .unbind('submit')
+            .on('submit', mr.forms.submit);
 
         //////////////// Handle Form Submit
-        $(document).on('change, input, paste, keyup', '.attempted-submit .field-error', function(){
+        $(document).on('change, input, paste, keyup', '.attempted-submit .field-error', function() {
             $(this).removeClass('field-error');
         });
-
     };
 
     mr.forms.documentReady = documentReady;
-    
-    mr.forms.submit = function(e){
+
+    mr.forms.submit = function(e) {
         // return false so form submits through jQuery rather than reloading page.
         if (e.preventDefault) e.preventDefault();
         else e.returnValue = false;
@@ -384,7 +380,7 @@ mr = (function (mr, $, window, document){
         thisForm.addClass('attempted-submit');
 
         // Do this if the form is intended to be submitted to MailChimp or Campaign Monitor
-        if (formAction.indexOf('createsend.com') !== -1 || formAction.indexOf('list-manage.com') !== -1 ) {
+        if (formAction.indexOf('createsend.com') !== -1 || formAction.indexOf('list-manage.com') !== -1) {
 
             console.log('Mail list form signup detected.');
             if (typeof originalError !== typeof undefined && originalError !== false) {
@@ -393,7 +389,6 @@ mr = (function (mr, $, window, document){
             
             // validateFields returns 1 on error;
             if (mr.forms.validateFields(thisForm) !== 1) {
-               
                 thisForm.removeClass('attempted-submit');
 
                 // Hide the error if one was shown
@@ -401,7 +396,7 @@ mr = (function (mr, $, window, document){
                 // Create a new loading spinner in the submit button.
                 submitButton.addClass('btn--loading');
                 
-                try{
+                try {
                     $.ajax({
                         url: thisForm.attr('action'),
                         crossDomain: true,
@@ -410,11 +405,9 @@ mr = (function (mr, $, window, document){
                         cache: false,
                         dataType: 'json',
                         contentType: 'application/json; charset=utf-8',
-                        success: function(data){
+                        success: function(data) {
                             // Request was a success, what was the response?
-
                             if (data.result !== "success" && data.Status !== 200) {
-                                
                                 // Got an error from Mail Chimp or Campaign Monitor
 
                                 // Keep the current error text in a data attribute on the form
@@ -425,9 +418,8 @@ mr = (function (mr, $, window, document){
 
                                 submitButton.removeClass('btn--loading');
                             } else {
-                                
                                 // Got success from Mail Chimp or Campaign Monitor
-                                
+
                                 submitButton.removeClass('btn--loading');
 
                                 successRedirect = thisForm.attr('data-success-redirect');
@@ -435,14 +427,14 @@ mr = (function (mr, $, window, document){
                                 // `successRedirect` is false.  Check for both.
                                 if (typeof successRedirect !== typeof undefined && successRedirect !== false && successRedirect !== "") {
                                     window.location = successRedirect;
-                                }else{
+                                } else {
                                     mr.forms.resetForm(thisForm);
                                     mr.forms.showFormSuccess(formSuccess, formError, 1000, 5000, 500);
                                 }
                             }
                         }
                     });
-                }catch(err){
+                } catch (err) {
                     // Keep the current error text in a data attribute on the form
                     formError.attr('original-error', formError.text());
                     // Show the error with the returned error text.
@@ -451,9 +443,6 @@ mr = (function (mr, $, window, document){
 
                     submitButton.removeClass('btn--loading');
                 }
-            
-
-                
             } else {
                 // There was a validation error - show the default form error message
                 mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
@@ -469,12 +458,11 @@ mr = (function (mr, $, window, document){
             if (error === 1) {
                 mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
             } else {
-
                 thisForm.removeClass('attempted-submit');
 
                 // Hide the error if one was shown
                 formError.fadeOut(200);
-                
+
                 // Create a new loading spinner in the submit button.
                 submitButton.addClass('btn--loading');
 
@@ -555,22 +543,20 @@ mr = (function (mr, $, window, document){
 
         if (!form.find('.field-error').length) {
             body.find('.form-error').fadeOut(1000);
-        }else{
-            
+        } else {
             var firstError = $(form).find('.field-error:first');
-            
-            if(firstError.length){
+
+            if (firstError.length) {
                 $('html, body').stop(true).animate({
                     scrollTop: (firstError.offset().top - 100)
-                }, 1200, function(){firstError.focus();});
+                }, 1200, function() { firstError.focus(); });
             }
         }
 
         return error;
     };
 
-    mr.forms.showFormSuccess = function(formSuccess, formError, fadeOutError, wait, fadeOutSuccess){
-        
+    mr.forms.showFormSuccess = function(formSuccess, formError, fadeOutError, wait, fadeOutSuccess) {
         formSuccess.stop(true).fadeIn(fadeOutError);
 
         formError.stop(true).fadeOut(fadeOutError);
@@ -579,8 +565,7 @@ mr = (function (mr, $, window, document){
         }, wait);
     };
 
-    mr.forms.showFormError = function(formSuccess, formError, fadeOutSuccess, wait, fadeOutError){
-        
+    mr.forms.showFormError = function(formSuccess, formError, fadeOutSuccess, wait, fadeOutError) {
         formError.stop(true).fadeIn(fadeOutSuccess);
 
         formSuccess.stop(true).fadeOut(fadeOutSuccess);
@@ -590,11 +575,10 @@ mr = (function (mr, $, window, document){
     };
 
     // Reset form to empty/default state.
-    mr.forms.resetForm = function(form){
+    mr.forms.resetForm = function(form) {
         form = $(form);
         form.get(0).reset();
         form.find('.input-radio, .input-checkbox').removeClass('checked');
-
     };
 
     mr.components.documentReady.push(documentReady);
@@ -603,9 +587,9 @@ mr = (function (mr, $, window, document){
 }(mr, jQuery, window, document));
 
 //////////////// Maps
-mr = (function (mr, $, window, document){
+mr = (function (mr, $, window, document) {
     "use strict";
-    
+
     mr.maps = {};
 
     var documentReady = function($){
@@ -1032,8 +1016,7 @@ mr = (function (mr, $, window, document){
     // In case there is a bar type nav element
     mr.navigation.bar = {};
 
-    var documentReady = function($){
-        
+    var documentReady = function($) {
         mr.navigation.nav.element = $('nav');
         mr.navigation.bar.element = $('nav .nav-bar');
         
@@ -1154,9 +1137,9 @@ mr = (function (mr, $, window, document){
     
     mr.newsletters = {};
 
-    var documentReady = function($){
+    var documentReady = function($) {
   
-  	var form,checkbox,label,id,parent,radio;
+  	var form, checkbox, label, id, parent, radio;
     
     // Treat Campaign Monitor forms
     $('form[action*="createsend.com"]').each(function(){
@@ -1379,8 +1362,7 @@ mr = (function (mr, $, window, document){
     
     mr.notifications = {};
 
-    var documentReady = function($){
-        
+    var documentReady = function($) {
         $('.notification').each(function(){
             var notification = $(this);
             if(!notification.find('.notification-close').length){
@@ -1459,15 +1441,15 @@ mr = (function (mr, $, window, document){
 }(mr, jQuery, window, document));
 
 //////////////// Parallax
-mr = (function (mr, $, window, document){
+mr = (function (mr, $, window, document) {
     "use strict";
-    
-    var documentReady = function($){
-        
+
+    var documentReady = function($) {
+
         var $window      = $(window); 
-        var windowWidth  = $window.width();
-        var windowHeight = $window.height();
-        var navHeight    = $('nav').outerHeight(true);
+        var windowWidth  = $window.width(),
+            windowHeight = $window.height(),
+            navHeight    = $('nav').outerHeight(true);
 
         // Disable parallax on mobile
 
@@ -1480,7 +1462,7 @@ mr = (function (mr, $, window, document){
                 parallaxHeroImage = $('.parallax:nth-of-type(1) .background-image-holder');
 
             parallaxHeroImage.css('top', -(navHeight));
-            if(parallaxHero.outerHeight(true) == windowHeight){
+            if (parallaxHero.outerHeight(true) == windowHeight) {
                 parallaxHeroImage.css('height', windowHeight + navHeight);
             }
         }
@@ -1525,38 +1507,35 @@ mr = (function (mr, $, window, document){
 }(mr, jQuery, window, document));
 
 //////////////// EasyPiecharts
-mr = (function (mr, $, window, document){
-	  "use strict";
-	  
-	  var documentReady = function($){
-	  	
-	  	$('.piechart').each(function(){
-	  		var chart = $(this),
-	  			value = chart.attr('data-value')*1;
-	  		chart.easyPieChart({
-	  			animate: 2000,
-	  			barColor: '#425cbb'
-	  		});
-	  		chart.data('easyPieChart').update(value);
-	  	});
+mr = (function (mr, $, window, document) {
+    "use strict";
 
-	  };
+    var documentReady = function($) {
+        $('.piechart').each(function() {
+            var chart = $(this),
+                value = chart.attr('data-value')*1;
+            chart.easyPieChart({
+                animate: 2000,
+                barColor: '#425cbb'
+            });
+            chart.data('easyPieChart').update(value);
+        });
+      };
 
-	  mr.easypiecharts = {
-	      documentReady : documentReady        
-	  };
+      mr.easypiecharts = {
+          documentReady : documentReady        
+      };
 
-	  mr.components.documentReady.push(documentReady);
-	  return mr;
+      mr.components.documentReady.push(documentReady);
+      return mr;
 
 }(mr, jQuery, window, document));
 
 //////////////// Scroll Reveal
-mr = (function (mr, $, window, document){
+mr = (function (mr, $, window, document) {
     "use strict";
-    
-    var documentReady = function($){
-        
+
+    var documentReady = function($) {
         var $body = $('body');
         if($('body[data-reveal-selectors]').length){
             window.sr = ScrollReveal();
@@ -1564,15 +1543,13 @@ mr = (function (mr, $, window, document){
 
         	// Gather scroll reveal options
         	var revealTiming = 1000;
-        	if($('body[data-reveal-timing]').length){
+        	if ($('body[data-reveal-timing]').length) {
         		revealTiming = $body.attr('data-reveal-timing');
         	}
 
         	// Initialize scroll reveal
         	window.sr.reveal(''+selectors+'', { viewFactor: 0.1, duration: ''+revealTiming+'', scale: 1, mobile: false });
-
         }
-
     };
 
     mr.scrollreveal = {
@@ -1590,27 +1567,25 @@ mr = (function (mr, $, window, document){
     
     mr.sliders = {};
 
-    var documentReady = function($){
-
+    var documentReady = function($) {
         var sliders = [];
 
-        $('.slider').each(function(){
+        $('.slider').each(function() {
             var candidate = $(this);
 
-            if(candidate.find('ul.slides').length){
-                return true;    
-            }else{
+            if (candidate.find('ul.slides').length) {
+                return true;
+            } else {
                 var children = [];
                 var childCount = candidate.find('>*').length;            
-                candidate.children().each(function(index){
+                candidate.children().each(function(index) {
                     children.push($(this).wrap('<li>').parent());
                 });
                 $('<ul class="slides"></ul>').append(children).appendTo(candidate);
             }
         });
 
-        $('.slider').each(function(index){
-            
+        $('.slider').each(function(index) {
             var slider = $(this);
             var sliderInitializer = $(this).find('ul.slides');
             var items = 1;
@@ -1619,28 +1594,20 @@ mr = (function (mr, $, window, document){
             var timing = 7000;
             var loop = false;
             var autoplay = true;
-            if(slider.attr('data-arrows') == 'true'){
-                arrows = true;
-            }else{
-                arrows = false;
-            }
-            if(slider.attr('data-autoplay') == 'false'){
-                autoplay = false;
-            }else{
-                autoplay = true;
-            }
-            if(slider.attr('data-paging') == 'true' && sliderInitializer.find('li').length > 1){
+            arrows = (slider.attr('data-arrows') == 'true') ? true : false;
+            autoplay = (slider.attr('data-autoplay') == 'false') ? false : true;
+            if (slider.attr('data-paging') == 'true' && sliderInitializer.find('li').length > 1) {
                 paging = true;
-            }else{
+            } else {
                 paging = false;
             }
-            if(slider.attr('data-timing')){
+            if (slider.attr('data-timing')) {
                 timing = slider.attr('data-timing');
             }
-            if(slider.attr('data-items')){
+            if (slider.attr('data-items')) {
                 items = slider.attr('data-items');
             }
-            if(sliderInitializer.find('li').length > 1 && slider.attr('data-loop') != 'false'){
+            if (sliderInitializer.find('li').length > 1 && slider.attr('data-loop') != 'false') {
                 loop = true;
             }
             sliders.push(sliderInitializer);
@@ -1655,21 +1622,18 @@ mr = (function (mr, $, window, document){
                 navText : false,
                 loop: loop,
                 mouseDrag: false,
-                responsive:{
-                    0:{
+                responsive: {
+                    0: {
                         items: 1
                     },
-                    768:{
+                    768: {
                         items: items
                     }
                 }
             });
-
-
         });
 
         mr.sliders.sliders = sliders;
-      
     };
 
     mr.sliders.documentReady = documentReady;
@@ -1691,13 +1655,13 @@ mr = (function (mr, $, window, document){
             innerLinks.each(function(){
                 var link = $(this);
                 var href = link.attr('href');
-                if(href.charAt(0) !== "#"){
+                if (href.charAt(0) !== "#") {
                     link.removeClass('inner-link');
                 }
             });
 
             var offset = 0;
-            if($('body[data-smooth-scroll-offset]').length){
+            if ($('body[data-smooth-scroll-offset]').length) {
                 offset = $('body').attr('data-smooth-scroll-offset');
                 offset = offset*1;
             }
@@ -1769,16 +1733,16 @@ $(window).bind("pageshow", function(event) {
     }
 });
 
-mr = (function (mr, $, window, document){
+mr = (function (mr, $, window, document) {
     "use strict";
     
-    var documentReady = function($){
-        $('a:not([href^="#"]):not([href^="tel"]):not([href^="mailto"]):not([data-lightbox]):not([href=""]):not([target="_blank"]):not(.modal-trigger):not([class*="lb-"])').on('click', function(){
+    var documentReady = function($) {
+        $('a:not([href^="#"]):not([href^="tel"]):not([href^="mailto"]):not([data-lightbox]):not([href=""]):not([target="_blank"]):not(.modal-trigger):not([class*="lb-"])').on('click', function() {
             $('[class*="transition--"]').removeClass('transition--active');
-        });   
+        });
     };
 
-    var windowLoad = function(){
+    var windowLoad = function() {
         $('[class*="transition--"]').addClass('transition--active');
         $('.loader').addClass('loader--fade');
     };
@@ -1795,10 +1759,10 @@ mr = (function (mr, $, window, document){
 }(mr, jQuery, window, document));
 
 //////////////// Twitter Feeds
-mr = (function (mr, $, window, document){
+mr = (function (mr, $, window, document) {
     "use strict";
     
-    var documentReady = function($){
+    var documentReady = function($) {
         $('.tweets-feed').each(function(index) {
             $(this).attr('id', 'tweets-' + index);
         }).each(function(index) {
@@ -1828,19 +1792,16 @@ mr = (function (mr, $, window, document){
 
             function handleTweets(tweets) {
                 var x = tweets.length;
-                var n = 0;
                 var html = '<ul class="slides">';
-                while (n < x) {
+                for (var n = 0; n < x; n++) {
                     html += '<li>' + tweets[n] + '</li>';
-                    n++;
                 }
                 html += '</ul>';
                 element.html(html);
                 
                 // Initialize twitter feed slider
-                if(element.closest('.slider').length){
+                if (element.closest('.slider').length) {
                     mr.sliders.documentReady(mr.setContext());
-                     
                     return html;
                 }
             }
@@ -1863,7 +1824,6 @@ mr = (function (mr, $, window, document){
     "use strict";
     
 	  var documentReady = function($){
-	      
 			//////////////// Youtube Background
 
 			if($('.youtube-background').length){
@@ -1886,23 +1846,23 @@ mr = (function (mr, $, window, document){
 
 			//////////////// Video Cover Play Icons
 
-			$('.video-cover').each(function(){
+			$('.video-cover').each(function() {
 			    var videoCover = $(this);
-			    if(videoCover.find('iframe').length){
+			    if (videoCover.find('iframe').length) {
 			        videoCover.find('iframe').attr('data-src', videoCover.find('iframe').attr('src'));
 			        videoCover.find('iframe').attr('src','');
 			    }
 			});
 
-			$('.video-cover .video-play-icon').on("click", function(){
+			$('.video-cover .video-play-icon').on("click", function() {
 			    var playIcon = $(this);
 			    var videoCover = playIcon.closest('.video-cover');
-			    if(videoCover.find('video').length){
+			    if (videoCover.find('video').length) {
 			        var video = videoCover.find('video').get(0);
 			        videoCover.addClass('reveal-video');
 			        video.play();
 			        return false;
-			    }else if(videoCover.find('iframe').length){
+			    } else if(videoCover.find('iframe').length) {
 			        var iframe = videoCover.find('iframe');
 			        iframe.attr('src',iframe.attr('data-src'));
 			        videoCover.addClass('reveal-video');
