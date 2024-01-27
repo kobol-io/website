@@ -16,12 +16,4 @@
     <loc>https://wiki.kobol.io/</loc>
     <priority>0.90</priority>
   </url>
-  <url>
-    <loc>https://wiki.kobol.io/download/</loc>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://shop.kobol.io/</loc>
-    <priority>0.90</priority>
-  </url>
 </urlset>
